@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
+import Features from './components/Features';
+import CategoryShowcase from './components/CategoryShowcase';
 import { ArrowUp } from 'lucide-react';
 
 function App() {
@@ -32,9 +34,15 @@ function App() {
       <main className="flex-grow">
         
         {/* Featured Products Grid */}
-        <div id="collections" className="pt-6 pb-16">
+        <div id="collections" className="pt-6 pb-4">
           <HeroGrid />
         </div>
+
+        {/* Brand Core Values */}
+        <Features />
+
+        {/* Shop By Category Showcase */}
+        <CategoryShowcase />
       </main>
 
       {/* Footer */}
