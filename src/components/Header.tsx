@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 const COLLECTIONS = [
@@ -74,7 +75,7 @@ export default function Header() {
 
         {/* Center on mobile / Left on desktop: Logo */}
         <div className="flex-1 lg:flex-none flex justify-center lg:justify-start z-10">
-          <a href="#" className="flex items-center gap-1.5 sm:gap-3 cursor-pointer group whitespace-nowrap">
+          <Link to="/" className="flex items-center gap-1.5 sm:gap-3 cursor-pointer group whitespace-nowrap">
             <img 
               src="/assets/images/logo.png" 
               alt="Akshar Foshan Logo" 
@@ -88,14 +89,14 @@ export default function Header() {
                 HOSPITALITY FF&E
               </span>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Center: Navigation Links (hidden on mobile) */}
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
+          <Link to="/" className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
             Home
-          </a>
+          </Link>
 
           {/* Collections Dropdown */}
           <div className="relative">
@@ -220,9 +221,9 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 py-4 px-6 space-y-3 shadow-lg animate-slideDown">
-          <a href="#" className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
+          <Link to="/" className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
             Home
-          </a>
+          </Link>
           
           <div className="space-y-1">
             <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Collections</span>

@@ -305,34 +305,36 @@ export default function CategoryShowcase() {
             </div>
 
             {/* Main Stage Image Area */}
-            <div className="relative w-full max-w-4xl flex-grow flex items-center justify-center my-6">
+            <div className="relative w-full flex-grow flex items-center justify-center my-6 px-4 sm:px-16 md:px-28">
               
               {/* Left Stage Arrow */}
               <button
                 onClick={prevImage}
-                className="absolute left-2 sm:left-4 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 cursor-pointer"
+                className="absolute left-2 sm:left-6 md:left-12 z-10 w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg border border-white/5"
                 aria-label="Previous Image"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
 
-              {/* Main Photo */}
-              <motion.img
-                key={lightboxData.currentIndex}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.25 }}
-                src={lightboxData.images[lightboxData.currentIndex]}
-                alt={`${lightboxData.subcategoryName} details`}
-                className="max-h-[50vh] sm:max-h-[65vh] max-w-full object-contain rounded-2xl shadow-2xl"
-                onClick={(e) => e.stopPropagation()}
-              />
+              {/* Main Photo Container */}
+              <div className="max-w-4xl w-full flex items-center justify-center">
+                <motion.img
+                  key={lightboxData.currentIndex}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.25 }}
+                  src={lightboxData.images[lightboxData.currentIndex]}
+                  alt={`${lightboxData.subcategoryName} details`}
+                  className="max-h-[50vh] sm:max-h-[65vh] max-w-full object-contain rounded-2xl shadow-2xl border border-white/5"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
 
               {/* Right Stage Arrow */}
               <button
                 onClick={nextImage}
-                className="absolute right-2 sm:right-4 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 cursor-pointer"
+                className="absolute right-2 sm:right-6 md:left-auto md:right-12 z-10 w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg border border-white/5"
                 aria-label="Next Image"
               >
                 <ArrowRight className="w-5 h-5" />
