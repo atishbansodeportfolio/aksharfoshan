@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
 import Features from './components/Features';
+import BrandStrip from './components/BrandStrip';
 import CategoryShowcase from './components/CategoryShowcase';
+import Services from './components/Services';
 import { ArrowUp } from 'lucide-react';
 
 function App() {
@@ -43,6 +45,12 @@ function App() {
 
         {/* Product Categories Showcase */}
         <CategoryShowcase />
+
+        {/* Brand Logos Strip */}
+        <BrandStrip />
+
+        {/* Project Services Grid */}
+        <Services />
       </main>
 
       <footer className="w-full bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400">

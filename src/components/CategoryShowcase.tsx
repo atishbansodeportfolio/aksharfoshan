@@ -16,32 +16,32 @@ interface Category {
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
   "clubchairs": [
-    "amelie.jpeg",
-    "bruce.jpeg",
-    "julian.jpeg",
     "palma.jpeg",
-    "sinclair.jpeg"
+    "julian.jpeg",
+    "amelie.jpeg",
+    "sinclair.jpeg",
+    "bruce.jpeg"
   ],
   "cabinets": [
     "dawson-bar-cabinate.jpeg",
+    "dawson-tv-dressor.jpeg",
     "dawson-bookcase.jpeg",
     "dawson-dressor.jpeg",
-    "dawson-tv-dressor.jpeg",
     "vancouver-glass-cabinet.jpeg"
   ],
   "dining-tables": [
-    "Berlin.jpeg",
     "canmore.jpeg",
     "everton.jpeg",
     "Freeform.jpeg",
-    "Seattle.jpeg"
+    "Seattle.jpeg",
+    "Berlin.jpeg"
   ],
   "chair-and-benches": [
+    "paloma.jpeg",
+    "Sabine (E) Bench.jpeg",
     "carprice-bulged.jpeg",
     "otis.jpeg",
-    "paloma-with-arm.jpeg",
-    "paloma.jpeg",
-    "Sabine (E) Bench.jpeg"
+    "paloma-with-arm.jpeg"
   ],
   "barstools": [
     "caprice-barstool.jpeg",
@@ -75,14 +75,14 @@ const formatTitle = (filename: string): string => {
 // Generate list of categories based on directory contents
 const CATEGORIES: Category[] = [
   { id: 'clubchairs', name: 'Club Chairs', folder: 'clubchairs' },
+  { id: 'barstools', name: 'Barstools', folder: 'barstools' },
   { id: 'cabinets', name: 'Cabinets', folder: 'cabinets' },
   { id: 'dining-tables', name: 'Dining Tables', folder: 'dining-tables' },
   { id: 'chair-and-benches', name: 'Chairs & Benches', folder: 'chair-and-benches' },
-  { id: 'barstools', name: 'Barstools', folder: 'barstools' },
   { id: 'sofas', name: 'Sofas', folder: 'sofas' },
 ].map(cat => {
   const files = LOOKBOOK_DATA[cat.folder] || [];
-  const sortedFiles = [...files].sort((a, b) => a.localeCompare(b));
+  const sortedFiles = files;
   
   const images = sortedFiles.map((file) => {
     return {
