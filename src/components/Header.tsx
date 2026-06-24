@@ -59,7 +59,7 @@ export default function Header() {
 
         {/* Center: Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors">
+          <a href="#" className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
             Home
           </a>
 
@@ -68,7 +68,7 @@ export default function Header() {
             <button
               onClick={() => toggleDropdown('collections')}
               onMouseEnter={() => setActiveDropdown('collections')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors py-2 cursor-pointer"
+              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
             >
               Collections <ChevronDown className="w-3.5 h-3.5" />
             </button>
@@ -81,7 +81,7 @@ export default function Header() {
                   <a
                     key={c.name}
                     href={c.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-amber-500 transition-all"
+                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
                   >
                     {c.name}
                   </a>
@@ -95,7 +95,7 @@ export default function Header() {
             <button
               onClick={() => toggleDropdown('products')}
               onMouseEnter={() => setActiveDropdown('products')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors py-2 cursor-pointer"
+              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
             >
               Products <ChevronDown className="w-3.5 h-3.5" />
             </button>
@@ -108,7 +108,7 @@ export default function Header() {
                   <a
                     key={p.name}
                     href={p.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-amber-500 transition-all"
+                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
                   >
                     {p.name}
                   </a>
@@ -122,7 +122,7 @@ export default function Header() {
             <button
               onClick={() => toggleDropdown('pages')}
               onMouseEnter={() => setActiveDropdown('pages')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors py-2 cursor-pointer"
+              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
             >
               Pages <ChevronDown className="w-3.5 h-3.5" />
             </button>
@@ -135,7 +135,7 @@ export default function Header() {
                   <a
                     key={pg.name}
                     href={pg.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-amber-500 transition-all"
+                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
                   >
                     {pg.name}
                   </a>
@@ -149,7 +149,7 @@ export default function Header() {
             <button
               onClick={() => toggleDropdown('blog')}
               onMouseEnter={() => setActiveDropdown('blog')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors py-2 cursor-pointer"
+              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
             >
               Blog <ChevronDown className="w-3.5 h-3.5" />
             </button>
@@ -162,7 +162,7 @@ export default function Header() {
                   <a
                     key={b.name}
                     href={b.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-amber-500 transition-all"
+                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
                   >
                     {b.name}
                   </a>
@@ -177,7 +177,7 @@ export default function Header() {
           {/* GET QUOTE Button */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-brand-charcoal hover:bg-amber-400 hover:text-brand-charcoal text-white font-extrabold text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center justify-center bg-brand-charcoal hover:bg-brand-plum hover:text-white text-white font-extrabold text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
             Get Quote
           </a>
@@ -185,7 +185,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-brand-charcoal hover:text-amber-500 transition-colors cursor-pointer"
+            className="lg:hidden p-2 text-brand-charcoal hover:text-brand-plum transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -196,41 +196,41 @@ export default function Header() {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 py-4 px-6 space-y-3 shadow-lg animate-slideDown">
-          <a href="#" className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-amber-500 transition-colors">
+          <a href="#" className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
             Home
           </a>
           
           <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-amber-500 font-extrabold">Collections</span>
+            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Collections</span>
             {COLLECTIONS.map((c) => (
-              <a key={c.name} href={c.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-amber-500">
+              <a key={c.name} href={c.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
                 {c.name}
               </a>
             ))}
           </div>
 
           <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-amber-500 font-extrabold">Products</span>
+            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Products</span>
             {PRODUCTS.map((p) => (
-              <a key={p.name} href={p.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-amber-500">
+              <a key={p.name} href={p.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
                 {p.name}
               </a>
             ))}
           </div>
 
           <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-amber-500 font-extrabold">Pages</span>
+            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Pages</span>
             {PAGES.map((pg) => (
-              <a key={pg.name} href={pg.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-amber-500">
+              <a key={pg.name} href={pg.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
                 {pg.name}
               </a>
             ))}
           </div>
 
           <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-amber-500 font-extrabold">Blog</span>
+            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Blog</span>
             {BLOG.map((b) => (
-              <a key={b.name} href={b.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-amber-500">
+              <a key={b.name} href={b.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
                 {b.name}
               </a>
             ))}

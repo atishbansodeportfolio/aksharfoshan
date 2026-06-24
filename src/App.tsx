@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-brand-charcoal selection:bg-amber-400 selection:text-brand-charcoal relative overflow-x-hidden flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-brand-charcoal selection:bg-brand-plum selection:text-white relative overflow-x-hidden flex flex-col justify-between">
       
       {/* Sticky Header Nav */}
       <Header />
@@ -50,8 +50,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© 2026 Akshar (Foshan) Hotel Furniture Co., Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <span className="hover:text-amber-500 transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-amber-500 transition-colors cursor-pointer">Terms of Service</span>
+            <span className="hover:text-brand-plum transition-colors cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-brand-plum transition-colors cursor-pointer">Terms of Service</span>
           </div>
         </div>
       </footer>
@@ -60,7 +60,7 @@ function App() {
       {showScroll && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-11 h-11 rounded-full border border-amber-400 bg-white text-amber-400 hover:bg-amber-400 hover:text-white shadow-md flex items-center justify-center transition-all duration-300 hover:-translate-y-1 z-50 cursor-pointer"
+          className="fixed bottom-8 right-8 w-11 h-11 rounded-full border border-brand-plum bg-white text-brand-plum hover:bg-brand-plum hover:text-white shadow-md flex items-center justify-center transition-all duration-300 hover:-translate-y-1 z-50 cursor-pointer"
           aria-label="Back to Top"
         >
           <ArrowUp className="w-4 h-4 stroke-[3]" />

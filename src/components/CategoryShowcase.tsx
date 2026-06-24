@@ -263,7 +263,7 @@ export default function CategoryShowcase() {
                 onClick={() => setActiveCategoryId(category.id)}
                 className={`flex items-center justify-between px-5 py-3.5 rounded-full lg:rounded-2xl font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shrink-0 cursor-pointer text-left ${
                   isActive
-                    ? 'bg-[#FFC700] text-brand-charcoal shadow-sm shadow-[#FFC700]/10 w-auto lg:w-full'
+                    ? 'bg-brand-plum text-white shadow-sm shadow-brand-plum/20 w-auto lg:w-full'
                     : 'bg-[#F5F5F3] hover:bg-[#EBEBE9] text-[#2B2521] w-auto lg:w-full'
                 }`}
               >
@@ -338,7 +338,7 @@ export default function CategoryShowcase() {
             {/* Modal Header */}
             <div className="w-full max-w-6xl flex justify-between items-center z-10">
               <div>
-                <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block mb-1">Lookbook Gallery</span>
+                <span className="text-[10px] font-bold text-purple-400 uppercase tracking-widest block mb-1">Lookbook Gallery</span>
                 <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">{lightboxData.subcategoryName}</h3>
               </div>
               <button
@@ -403,7 +403,7 @@ export default function CategoryShowcase() {
                       onClick={() => setLightboxData(prev => ({ ...prev, currentIndex: index }))}
                       className={`relative flex-none w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden transition-all duration-200 cursor-pointer border-2 ${
                         isActive
-                          ? 'border-amber-400 scale-105 shadow-md shadow-amber-400/20'
+                          ? 'border-purple-400 scale-105 shadow-md shadow-purple-400/20'
                           : 'border-white/10 hover:border-white/35 opacity-60 hover:opacity-100'
                       }`}
                     >
