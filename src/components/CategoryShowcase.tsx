@@ -15,126 +15,79 @@ interface Category {
 }
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
-  "barstools": [
-    "hero-3.jpeg",
-    "Screenshot 2026-06-19 172109.png",
-    "Screenshot 2026-06-19 172118.png",
-    "Screenshot 2026-06-19 172125.png",
-    "Screenshot 2026-06-19 172132.png"
+  "clubchairs": [
+    "amelie.jpeg",
+    "bruce.jpeg",
+    "julian.jpeg",
+    "palma.jpeg",
+    "sinclair.jpeg"
   ],
   "cabinets": [
-    "hero-8.jpeg",
-    "Screenshot 2026-06-19 172828.png",
-    "Screenshot 2026-06-19 172836.png",
-    "Screenshot 2026-06-19 172843.png",
-    "Screenshot 2026-06-19 172853.png",
-    "Screenshot 2026-06-19 172901.png",
-    "Screenshot 2026-06-19 172908.png",
-    "Screenshot 2026-06-19 172918.png"
-  ],
-  "chair-and-benches": [
-    "hero-1.jpeg",
-    "Screenshot 2026-06-19 144835.png",
-    "Screenshot 2026-06-19 144849.png",
-    "Screenshot 2026-06-19 144905.png",
-    "Screenshot 2026-06-19 144925.png",
-    "Screenshot 2026-06-19 144939.png",
-    "Screenshot 2026-06-19 144959.png",
-    "Screenshot 2026-06-19 145008.png"
-  ],
-  "clubchairs": [
-    "hero.png",
-    "Screenshot 2026-06-19 171824.png",
-    "Screenshot 2026-06-19 171901.png",
-    "Screenshot 2026-06-19 171908.png",
-    "Screenshot 2026-06-19 171918.png",
-    "Screenshot 2026-06-19 171927.png",
-    "Screenshot 2026-06-19 171942.png",
-    "Screenshot 2026-06-19 172010.png"
+    "dawson-bar-cabinate.jpeg",
+    "dawson-bookcase.jpeg",
+    "dawson-dressor.jpeg",
+    "dawson-tv-dressor.jpeg",
+    "vancouver-glass-cabinet.jpeg"
   ],
   "dining-tables": [
-    "hero-5.jpeg",
-    "Screenshot 2026-06-19 172404.png",
-    "Screenshot 2026-06-19 172411.png",
-    "Screenshot 2026-06-19 172419.png",
-    "Screenshot 2026-06-19 172433.png",
-    "Screenshot 2026-06-19 172442.png"
+    "Berlin.jpeg",
+    "canmore.jpeg",
+    "everton.jpeg",
+    "Freeform.jpeg",
+    "Seattle.jpeg"
   ],
-  "leather-fabric-colours": [
-    "hero.jpeg",
-    "Screenshot 2026-06-19 173008.png",
-    "Screenshot 2026-06-19 173017.png",
-    "Screenshot 2026-06-19 173026.png",
-    "Screenshot 2026-06-19 173036.png",
-    "Screenshot 2026-06-19 173052.png",
-    "Screenshot 2026-06-19 173101.png",
-    "Screenshot 2026-06-19 173106.png",
-    "Screenshot 2026-06-19 173113.png",
-    "Screenshot 2026-06-19 173119.png",
-    "Screenshot 2026-06-19 173128.png"
+  "chair-and-benches": [
+    "carprice-bulged.jpeg",
+    "otis.jpeg",
+    "paloma-with-arm.jpeg",
+    "paloma.jpeg",
+    "Sabine (E) Bench.jpeg"
   ],
-  "occasional-tables": [
-    "hero-7.jpeg",
-    "Screenshot 2026-06-19 172655.png",
-    "Screenshot 2026-06-19 172701.png",
-    "Screenshot 2026-06-19 172709.png",
-    "Screenshot 2026-06-19 172714.png",
-    "Screenshot 2026-06-19 172723.png",
-    "Screenshot 2026-06-19 172728.png",
-    "Screenshot 2026-06-19 172735.png",
-    "Screenshot 2026-06-19 172742.png"
-  ],
-  "slim-collection-tables": [
-    "hero-6.jpeg",
-    "Screenshot 2026-06-19 172447.png",
-    "Screenshot 2026-06-19 172459.png",
-    "Screenshot 2026-06-19 172510.png",
-    "Screenshot 2026-06-19 172518.png",
-    "Screenshot 2026-06-19 172527.png",
-    "Screenshot 2026-06-19 172540.png",
-    "Screenshot 2026-06-19 172553.png"
+  "barstools": [
+    "caprice-barstool.jpeg",
+    "Cassius Barstool.jpeg",
+    "Dex_barstool.jpeg",
+    "evan.jpeg",
+    "sabina-barstool.jpeg",
+    "school-chair-with-arms.jpeg",
+    "school-chair.jpeg",
+    "steve.jpeg"
   ],
   "sofas": [
-    "hero-4.jpeg",
-    "Screenshot 2026-06-19 172157.png",
-    "Screenshot 2026-06-19 172205.png",
-    "Screenshot 2026-06-19 172212.png",
-    "Screenshot 2026-06-19 172221.png",
-    "Screenshot 2026-06-19 172231.png",
-    "Screenshot 2026-06-19 172236.png",
-    "Screenshot 2026-06-19 172249.png",
-    "Screenshot 2026-06-19 172304.png"
+    "senaa-chaise-lounge.jpeg",
+    "senna-pouf.jpeg",
+    "Senna-sofa-240.jpeg",
+    "Senna-Sofa-285.jpeg",
+    "victor-elements.jpeg"
   ]
 };
 
-// Generate list of categories based on directory contents, sorting hero images to the front
+// Helper function to format filename into a nice readable title
+const formatTitle = (filename: string): string => {
+  const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+  const withSpaces = nameWithoutExt.replace(/[-_]/g, ' ');
+  return withSpaces
+    .split(' ')
+    .map(word => word ? word.charAt(0).toUpperCase() + word.slice(1) : '')
+    .join(' ');
+};
+
+// Generate list of categories based on directory contents
 const CATEGORIES: Category[] = [
-  { id: 'occasional-tables', name: 'Occasional Tables', folder: 'occasional-tables' },
   { id: 'clubchairs', name: 'Club Chairs', folder: 'clubchairs' },
   { id: 'cabinets', name: 'Cabinets', folder: 'cabinets' },
   { id: 'dining-tables', name: 'Dining Tables', folder: 'dining-tables' },
   { id: 'chair-and-benches', name: 'Chairs & Benches', folder: 'chair-and-benches' },
   { id: 'barstools', name: 'Barstools', folder: 'barstools' },
   { id: 'sofas', name: 'Sofas', folder: 'sofas' },
-  { id: 'slim-collection-tables', name: 'Slim Collection Tables', folder: 'slim-collection-tables' },
-  { id: 'leather-fabric-colours', name: 'Leather & Fabrics', folder: 'leather-fabric-colours' },
 ].map(cat => {
   const files = LOOKBOOK_DATA[cat.folder] || [];
-  // Sort so the 'hero' file comes first, then other screenshots alphabetically
-  const sortedFiles = [...files].sort((a, b) => {
-    const isAHero = a.startsWith('hero');
-    const isBHero = b.startsWith('hero');
-    if (isAHero && !isBHero) return -1;
-    if (!isAHero && isBHero) return 1;
-    return a.localeCompare(b);
-  });
+  const sortedFiles = [...files].sort((a, b) => a.localeCompare(b));
   
-  const images = sortedFiles.map((file, idx) => {
-    const isHero = file.startsWith('hero');
-    const title = isHero ? 'Featured Style' : `Style ${String(idx).padStart(2, '0')}`;
+  const images = sortedFiles.map((file) => {
     return {
       path: `/assets/lookbook/${cat.folder}/${file}`,
-      title
+      title: formatTitle(file)
     };
   });
 
@@ -167,7 +120,7 @@ const cardVariants: Variants = {
 };
 
 export default function CategoryShowcase() {
-  const [activeCategoryId, setActiveCategoryId] = useState('occasional-tables');
+  const [activeCategoryId, setActiveCategoryId] = useState('clubchairs');
   const [lightboxData, setLightboxData] = useState<{
     isOpen: boolean;
     subcategoryName: string;
@@ -224,12 +177,12 @@ export default function CategoryShowcase() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 select-none">
+    <section className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-24">
       
       {/* Header Area */}
       <div className="flex items-center justify-between mb-10 sm:mb-12">
         <h2 className="text-xl sm:text-2xl font-black text-brand-charcoal tracking-tight font-sans uppercase">
-          Shop By Category
+          Product Categories
         </h2>
         
         {/* Navigation Arrows */}
@@ -254,17 +207,17 @@ export default function CategoryShowcase() {
       <div className="flex flex-col lg:flex-row gap-8 items-start">
         
         {/* Left: Category Stack (Pills) */}
-        <div className="w-full lg:w-64 shrink-0 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar gap-2 sm:gap-3 pb-4 lg:pb-0">
+        <div className="w-full lg:w-64 shrink-0 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar gap-2 lg:gap-0 lg:justify-between lg:h-[320px] pb-4 lg:pb-0">
           {CATEGORIES.map(category => {
             const isActive = category.id === activeCategoryId;
             return (
               <button
                 key={category.id}
                 onClick={() => setActiveCategoryId(category.id)}
-                className={`flex items-center justify-between px-5 py-3.5 rounded-full lg:rounded-2xl font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shrink-0 cursor-pointer text-left ${
+                className={`flex items-center justify-between px-5 py-3.5 lg:py-2.5 rounded-full lg:rounded-xl font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shrink-0 cursor-pointer text-left w-auto lg:w-full ${
                   isActive
-                    ? 'bg-brand-plum text-white shadow-sm shadow-brand-plum/20 w-auto lg:w-full'
-                    : 'bg-[#F5F5F3] hover:bg-[#EBEBE9] text-[#2B2521] w-auto lg:w-full'
+                    ? 'bg-brand-plum text-white shadow-sm shadow-brand-plum/20'
+                    : 'bg-[#F5F5F3] hover:bg-[#EBEBE9] text-[#2B2521]'
                 }`}
               >
                 <span className="truncate mr-4">{category.name}</span>
@@ -289,32 +242,33 @@ export default function CategoryShowcase() {
                 key={img.path}
                 variants={cardVariants}
                 onClick={() => openLightbox(activeCategory.name, activeCategory.images.map(i => i.path), index)}
-                className="group relative flex-none w-[270px] sm:w-[320px] snap-start bg-[#F5F5F3] rounded-[24px] sm:rounded-[32px] overflow-hidden p-6 cursor-pointer flex flex-col justify-between aspect-square select-none shadow-sm hover:shadow-md transition-all duration-300"
+                className="group relative flex-none w-[270px] sm:w-[320px] snap-start bg-[#F5F5F3] rounded-[10px] overflow-hidden cursor-pointer aspect-square shadow-sm hover:shadow-md transition-all duration-300"
               >
-                {/* Visual hover background subtle lift */}
-                <div className="absolute inset-0 bg-[#EBEBE9]/0 group-hover:bg-[#EBEBE9]/40 transition-colors duration-300" />
-                
-                {/* Center Image */}
-                <div className="relative flex-grow flex items-center justify-center p-4">
-                  <img
-                    src={img.path}
-                    alt={img.title}
-                    className="max-h-[160px] sm:max-h-[200px] w-auto object-contain transform group-hover:scale-[1.04] transition-transform duration-750 ease-out"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#2B2521]/5 rounded-2xl backdrop-blur-[2px]">
-                    <span className="bg-white/90 text-brand-charcoal font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-sm flex items-center gap-2">
-                      <Eye className="w-3.5 h-3.5" /> Zoom Style
-                    </span>
-                  </div>
+                {/* Full Background Image */}
+                <img
+                  src={img.path}
+                  alt={img.title}
+                  className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-[1.04] transition-transform duration-750 ease-out"
+                />
+
+                {/* Zoom overlay on hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#2B2521]/10 backdrop-blur-[1px] z-20">
+                  <span className="bg-white/90 text-brand-charcoal font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-sm flex items-center gap-2">
+                    <Eye className="w-3.5 h-3.5" /> Zoom Style
+                  </span>
                 </div>
 
-                {/* Bottom Details */}
-                <div className="relative z-10 flex items-center justify-between mt-4">
-                  <h3 className="font-bold text-[#2B2521] text-xs sm:text-sm tracking-widest uppercase font-sans">
+                {/* Image Name at the bottom center */}
+                <div className="absolute bottom-6 inset-x-0 text-center z-10 px-12 pointer-events-none">
+                  <h3 className="font-bold text-[#2B2521] text-[10px] sm:text-xs tracking-widest uppercase font-sans">
                     {img.title}
                   </h3>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-brand-charcoal group-hover:bg-brand-charcoal group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
-                    <ArrowRight className="w-4 h-4 rotate-[-45deg] group-hover:rotate-0 transition-transform duration-300" />
+                </div>
+
+                {/* Arrow Button at the bottom-right in a small bubble */}
+                <div className="absolute bottom-4 right-4 z-30">
+                  <div className="w-8 h-8 rounded-full bg-white text-brand-charcoal group-hover:bg-brand-charcoal group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border border-black/5">
+                    <ArrowRight className="w-3.5 h-3.5 rotate-[-45deg] group-hover:rotate-0 transition-transform duration-300" />
                   </div>
                 </div>
               </motion.div>

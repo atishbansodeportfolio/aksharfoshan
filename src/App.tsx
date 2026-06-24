@@ -41,13 +41,12 @@ function App() {
         {/* Brand Core Values */}
         <Features />
 
-        {/* Shop By Category Showcase */}
+        {/* Product Categories Showcase */}
         <CategoryShowcase />
       </main>
 
-      {/* Footer */}
       <footer className="w-full bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© 2026 Akshar (Foshan) Hotel Furniture Co., Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <span className="hover:text-brand-plum transition-colors cursor-pointer">Privacy Policy</span>
