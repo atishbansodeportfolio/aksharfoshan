@@ -1,32 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-const COLLECTIONS = [
-  { name: 'Marriott Standards', href: '#marriott' },
-  { name: 'Hilton Standards', href: '#hilton' },
-  { name: 'IHG Standards', href: '#ihg' },
-  { name: 'Choice Standards', href: '#choice' },
-  { name: 'Wyndham Standards', href: '#wyndham' }
-];
-
-const PRODUCTS = [
-  { name: 'Casegoods & Suites', href: '#casegoods' },
-  { name: 'Upholstery & Seating', href: '#seating' },
-  { name: 'Lighting & Decor', href: '#lighting' },
-  { name: 'Vanities & Bathrooms', href: '#vanity' }
-];
-
-const PAGES = [
-  { name: 'Design Consulting', href: '#design' },
-  { name: 'Sourcing & Quality Control', href: '#sourcing' },
-  { name: 'Logistics & FOB/DDP', href: '#logistics' },
-  { name: 'Warranty & Support', href: '#support' }
-];
-
-const BLOG = [
-  { name: 'FF&E Sourcing Guides', href: '#blog1' },
-  { name: 'Case Studies', href: '#blog2' }
+const NAV_ITEMS = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '#/#products' },
+  { name: 'Portfolio', href: '#/#portfolio' },
+  { name: 'Services', href: '#/#services' },
+  { name: 'Instagram', href: '#/#instagram' }
 ];
 
 const FurnitureMenuIcon = () => (
@@ -52,11 +33,6 @@ const FurnitureMenuIcon = () => (
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  const toggleDropdown = (name: string) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 transition-all duration-300">
@@ -94,123 +70,34 @@ export default function Header() {
 
         {/* Center: Navigation Links (hidden on mobile) */}
         <nav className="hidden lg:flex items-center gap-8">
-          <Link to="/" className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
-            Home
-          </Link>
-
-          {/* Collections Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown('collections')}
-              onMouseEnter={() => setActiveDropdown('collections')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
-            >
-              Collections <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            {activeDropdown === 'collections' && (
-              <div 
-                className="absolute top-full left-0 w-52 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 animate-fadeIn"
-                onMouseLeave={() => setActiveDropdown(null)}
+          {NAV_ITEMS.map((item) => {
+            if (item.href === '/') {
+              return (
+                <Link
+                  key={item.name}
+                  to="/"
+                  className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
+                >
+                  {item.name}
+                </Link>
+              );
+            }
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
               >
-                {COLLECTIONS.map((c) => (
-                  <a
-                    key={c.name}
-                    href={c.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
-                  >
-                    {c.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Products Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown('products')}
-              onMouseEnter={() => setActiveDropdown('products')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
-            >
-              Products <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            {activeDropdown === 'products' && (
-              <div 
-                className="absolute top-full left-0 w-52 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 animate-fadeIn"
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {PRODUCTS.map((p) => (
-                  <a
-                    key={p.name}
-                    href={p.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
-                  >
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Pages Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown('pages')}
-              onMouseEnter={() => setActiveDropdown('pages')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
-            >
-              Pages <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            {activeDropdown === 'pages' && (
-              <div 
-                className="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 animate-fadeIn"
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {PAGES.map((pg) => (
-                  <a
-                    key={pg.name}
-                    href={pg.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
-                  >
-                    {pg.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Blog Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown('blog')}
-              onMouseEnter={() => setActiveDropdown('blog')}
-              className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors py-2 cursor-pointer"
-            >
-              Blog <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            {activeDropdown === 'blog' && (
-              <div 
-                className="absolute top-full left-0 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 mt-1 animate-fadeIn"
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {BLOG.map((b) => (
-                  <a
-                    key={b.name}
-                    href={b.href}
-                    className="block px-4 py-2 text-xs font-semibold text-brand-charcoal hover:bg-gray-50 hover:text-brand-plum transition-all"
-                  >
-                    {b.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
+                {item.name}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Right: GET QUOTE Button (always on the right) */}
         <div className="flex-none flex justify-end items-center gap-4 z-10">
           <a
-            href="#contact"
+            href="#/#contact"
             className="inline-flex items-center justify-center bg-brand-charcoal hover:bg-brand-plum hover:text-white text-white font-extrabold text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
           >
             Get Quote
@@ -220,46 +107,31 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 py-4 px-6 space-y-3 shadow-lg animate-slideDown">
-          <Link to="/" className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors">
-            Home
-          </Link>
-          
-          <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Collections</span>
-            {COLLECTIONS.map((c) => (
-              <a key={c.name} href={c.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
-                {c.name}
+        <div className="lg:hidden bg-white border-t border-gray-100 py-6 px-6 space-y-4 shadow-lg animate-slideDown">
+          {NAV_ITEMS.map((item) => {
+            if (item.href === '/') {
+              return (
+                <Link
+                  key={item.name}
+                  to="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
+                >
+                  {item.name}
+                </Link>
+              );
+            }
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
+              >
+                {item.name}
               </a>
-            ))}
-          </div>
-
-          <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Products</span>
-            {PRODUCTS.map((p) => (
-              <a key={p.name} href={p.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
-                {p.name}
-              </a>
-            ))}
-          </div>
-
-          <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Pages</span>
-            {PAGES.map((pg) => (
-              <a key={pg.name} href={pg.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
-                {pg.name}
-              </a>
-            ))}
-          </div>
-
-          <div className="space-y-1">
-            <span className="block py-1 text-[10px] uppercase tracking-wider text-brand-plum font-extrabold">Blog</span>
-            {BLOG.map((b) => (
-              <a key={b.name} href={b.href} className="block py-1.5 pl-4 text-xs font-semibold text-brand-charcoal hover:text-brand-plum">
-                {b.name}
-              </a>
-            ))}
-          </div>
+            );
+          })}
         </div>
       )}
     </header>

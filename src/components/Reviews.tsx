@@ -66,7 +66,7 @@ export default function Reviews() {
   };
 
   return (
-    <section className="bg-white py-20 sm:py-24 border-t border-b border-gray-100 select-none overflow-hidden relative">
+    <section id="reviews" className="bg-white py-20 sm:py-24 border-t border-b border-gray-100 select-none overflow-hidden relative">
       {/* Soft background shape */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-brand-gold/[0.03] rounded-full blur-[100px] pointer-events-none -z-10" />
 

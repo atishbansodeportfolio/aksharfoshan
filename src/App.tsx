@@ -9,6 +9,8 @@ import OurProjects from './components/OurProjects';
 import Stats from './components/Stats';
 import Reviews from './components/Reviews';
 import Services from './components/Services';
+import InstagramFeed from './components/InstagramFeed';
+import Footer from './components/Footer';
 import ProjectsPage from './projects/ProjectsPage';
 import ProjectDetailsPage from './projects/ProjectDetailsPage';
 import { ArrowUp } from 'lucide-react';
@@ -26,6 +28,32 @@ function App() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll manager for HashRouter element anchors (#/#targetId)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const match = hash.match(/#([^#]+)$/);
+        if (match && match[1]) {
+          const targetId = match[1];
+          // Delay briefly to allow navigation/rendering to settle
+          setTimeout(() => {
+            const element = document.getElementById(targetId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 150);
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    // Run on initial load in case they land on the page with a hash
+    handleHashChange();
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const scrollToTop = () => {
@@ -61,14 +89,17 @@ function App() {
                 {/* Selected Hotel Projects Showcase */}
                 <OurProjects />
 
+                {/* Project Services Grid */}
+                <Services />
+
                 {/* Brand Track Record Stats */}
                 <Stats />
 
                 {/* Customer Reviews Section */}
                 <Reviews />
 
-                {/* Project Services Grid */}
-                <Services />
+                {/* Instagram Feed Section */}
+                <InstagramFeed />
               </>
             } />
             <Route path="/projects" element={<ProjectsPage />} />
@@ -76,15 +107,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer className="w-full bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© 2026 Akshar (Foshan) Hotel Furniture Co., Ltd. All rights reserved.</p>
-            <div className="flex gap-6">
-              <span className="hover:text-brand-plum transition-colors cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-brand-plum transition-colors cursor-pointer">Terms of Service</span>
-            </div>
-          </div>
-        </footer>
+        <Footer />
 
         {/* Floating Back to Top Button */}
         {showScroll && (

@@ -159,7 +159,7 @@ const cardVariants: Variants = {
 
 export default function Services() {
   return (
-    <section className="bg-gradient-to-b from-[#FAF8F5] via-white to-[#FAF8F5]/30 py-20 sm:py-28 border-t border-gray-100/50 relative overflow-hidden">
+    <section id="services" className="bg-gradient-to-b from-[#FAF8F5] via-white to-[#FAF8F5]/30 py-20 sm:py-28 border-t border-gray-100/50 relative overflow-hidden">
       {/* Decorative clean background mesh shapes */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-cream rounded-full blur-[120px] opacity-70 -z-10 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-plum/[0.02] rounded-full blur-[100px] opacity-50 -z-10 pointer-events-none" />

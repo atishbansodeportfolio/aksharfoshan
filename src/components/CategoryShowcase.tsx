@@ -177,7 +177,7 @@ export default function CategoryShowcase() {
   };
 
   return (
-    <section className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-24">
+    <section id="products" className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-24">
       
       {/* Header Area */}
       <div className="flex items-center justify-between mb-10 sm:mb-12">
