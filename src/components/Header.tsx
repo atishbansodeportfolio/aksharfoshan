@@ -51,20 +51,12 @@ export default function Header() {
 
         {/* Center on mobile / Left on desktop: Logo */}
         <div className="flex-1 lg:flex-none flex justify-center lg:justify-start z-10">
-          <Link to="/" className="flex items-center gap-1.5 sm:gap-3 cursor-pointer group whitespace-nowrap">
+          <Link to="/" className="flex items-center cursor-pointer group">
             <img 
-              src="/assets/images/logo.png" 
+              src="/new-logo-1.png" 
               alt="Akshar Foshan Logo" 
-              className="h-8 sm:h-9 lg:h-11 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-12 sm:h-14 lg:h-16 object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
-            <div className="flex flex-col">
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-black tracking-tight text-brand-charcoal font-sans leading-none transition-colors duration-300 group-hover:text-brand-plum">
-                Akshar Foshan
-              </span>
-              <span className="text-[6.5px] sm:text-[8px] lg:text-[9px] text-gray-400 font-bold uppercase tracking-[0.18em] mt-1 leading-none">
-                HOSPITALITY FF&E
-              </span>
-            </div>
           </Link>
         </div>
 

@@ -132,7 +132,7 @@ export default function InstagramFeed() {
               {/* Avatar circle */}
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-gray-100 shadow-sm bg-white flex items-center justify-center p-1.5">
                 <img
-                  src="/assets/images/logo.png"
+                  src="/new-logo.png"
                   alt="Akshar Foshan Logo"
                   className="w-full h-full object-contain"
                 />
