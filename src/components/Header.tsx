@@ -4,10 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 const NAV_ITEMS = [
   { name: 'Home', href: '/' },
-  { name: 'Products', href: '#/#products' },
-  { name: 'Portfolio', href: '#/#portfolio' },
-  { name: 'Services', href: '#/#services' },
-  { name: 'Instagram', href: '#/#instagram' }
+  { name: 'About', href: '/about' },
+  { name: 'Products', href: '/products' },
+  { name: 'Portfolio', href: '/projects' },
+  { name: 'Services', href: '/#services' }
 ];
 
 const FurnitureMenuIcon = () => (
@@ -61,13 +61,13 @@ export default function Header() {
         </div>
 
         {/* Center: Navigation Links (hidden on mobile) */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-8">
           {NAV_ITEMS.map((item) => {
-            if (item.href === '/') {
+            if (item.href.startsWith('/')) {
               return (
                 <Link
                   key={item.name}
-                  to="/"
+                  to={item.href}
                   className="text-[11px] font-extrabold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
                 >
                   {item.name}
@@ -89,7 +89,7 @@ export default function Header() {
         {/* Right: GET QUOTE Button (always on the right) */}
         <div className="flex-none flex justify-end items-center gap-4 z-10">
           <a
-            href="#/#contact"
+            href="/#contact"
             className="inline-flex items-center justify-center bg-brand-charcoal hover:bg-brand-plum hover:text-white text-white font-extrabold text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 lg:px-5 lg:py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
           >
             Get Quote
@@ -101,11 +101,11 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 py-6 px-6 space-y-4 shadow-lg animate-slideDown">
           {NAV_ITEMS.map((item) => {
-            if (item.href === '/') {
+            if (item.href.startsWith('/')) {
               return (
                 <Link
                   key={item.name}
-                  to="/"
+                  to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-2 text-xs font-bold uppercase tracking-widest text-brand-charcoal hover:text-brand-plum transition-colors"
                 >

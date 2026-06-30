@@ -42,7 +42,7 @@ export default function HeroGrid() {
 
             {/* Absolute Arrow Link at Bottom Right */}
             <a
-              href="#/#contact"
+              href="/#contact"
               className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white text-brand-charcoal hover:bg-brand-charcoal hover:text-white shadow-sm flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <ArrowUpRight className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-gray-500 hover:text-current" />

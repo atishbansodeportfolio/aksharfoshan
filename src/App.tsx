@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
 import Features from './components/Features';
@@ -13,7 +13,30 @@ import InstagramFeed from './components/InstagramFeed';
 import Footer from './components/Footer';
 import ProjectsPage from './projects/ProjectsPage';
 import ProjectDetailsPage from './projects/ProjectDetailsPage';
+import AboutUsPage from './about-us/AboutUsPage';
+import ProductsPage from './products/ProductsPage';
 import { ArrowUp } from 'lucide-react';
+
+function ScrollToHashElement() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Delay briefly to let DOM layout settle
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);
@@ -30,31 +53,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll manager for HashRouter element anchors (#/#targetId)
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const match = hash.match(/#([^#]+)$/);
-        if (match && match[1]) {
-          const targetId = match[1];
-          // Delay briefly to allow navigation/rendering to settle
-          setTimeout(() => {
-            const element = document.getElementById(targetId);
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 150);
-        }
-      }
-    };
 
-    window.addEventListener('hashchange', handleHashChange);
-    // Run on initial load in case they land on the page with a hash
-    handleHashChange();
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -62,6 +61,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToHashElement />
       <div className="min-h-screen bg-white text-brand-charcoal selection:bg-brand-plum selection:text-white relative flex flex-col justify-between">
         
         {/* Sticky Header Nav */}
@@ -104,6 +104,9 @@ function App() {
             } />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/products" element={<ProductsPage />} />
           </Routes>
         </main>
 
