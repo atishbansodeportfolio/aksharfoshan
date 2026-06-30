@@ -415,7 +415,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          {/* Right Portion: Details Panel (Static on Mobile, Horizontal Drawer on Desktop) */}
+          {/* Right Portion: Details Panel (Static on Mobile, Horizontal Drawer on Desktops) */}
           <div className="w-full bg-white p-8 border-t border-[#EBEBE9] flex flex-col justify-between lg:relative lg:inset-auto lg:transform-none lg:translate-y-0 lg:w-0 lg:group-hover:w-[420px] lg:border-t-0 lg:border-l lg:border-transparent lg:group-hover:border-[#EBEBE9] lg:transition-all lg:duration-500 lg:ease-out overflow-hidden flex-shrink-0 lg:bg-white lg:p-0">
             
             {/* Fixed width content container for desktop, full width for mobile */}
