@@ -3,52 +3,52 @@ import { ArrowUpRight } from 'lucide-react';
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
   "Chairs": [
-    "img3.png",
-    "img6.png",
-    "img5.png",
-    "img4.png",
-    "img2.png",
-    "img1.png"
+    "img3.webp",
+    "img6.webp",
+    "img5.webp",
+    "img4.webp",
+    "img2.webp",
+    "img1.webp"
   ],
   "Desk": [
-    "img2.png",
-    "img4.png",
-    "img5.png",
-    "img3.png",
-    "img1.png"
+    "img2.webp",
+    "img4.webp",
+    "img5.webp",
+    "img3.webp",
+    "img1.webp"
   ],
   "Sofas": [
-    "img2.png",
-    "img3.png",
-    "img5.png",
-    "img6.png",
-    "img1.png"
+    "img2.webp",
+    "img3.webp",
+    "img5.webp",
+    "img6.webp",
+    "img1.webp"
   ],
   "Tables": [
-    "img1.png",
-    "img2.png",
-    "img3.png",
-    "img4.png"
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp"
   ],
   "beds": [
-    "img3.png",
-    "img4.png",
-    "img1.png",
-    "img2.png"
+    "img3.webp",
+    "img4.webp",
+    "img1.webp",
+    "img2.webp"
   ],
   "cabinates": [
-    "img6.png",
-    "img4.png",
-    "img5.png",
-    "img3.png",
-    "img1.png",
-    "img2.png"
+    "img6.webp",
+    "img4.webp",
+    "img5.webp",
+    "img3.webp",
+    "img1.webp",
+    "img2.webp"
   ],
   "Accessories": [
-    "img1.png",
-    "img2.png",
-    "img3.png",
-    "img4.png"
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp"
   ]
 };
 
@@ -117,58 +117,58 @@ export default function ProductsPage() {
 
   // Assemble dynamic categories matching index layout list
   const categoriesList: Category[] = [
-    { 
-      id: 'chairs', 
-      name: 'Chairs', 
+    {
+      id: 'chairs',
+      name: 'Chairs',
       folder: 'Chairs',
       count: 6,
       desc: 'Sleek, ergonomically designed seating options that provide optimal support and sophisticated styling for dining and lounge environments.',
-      refImage: '/about-hero.png',
+      refImage: '/about-hero.webp',
       images: []
     },
-    { 
-      id: 'desks', 
-      name: 'Desks', 
+    {
+      id: 'desks',
+      name: 'Desks',
       folder: 'Desk',
       count: 5,
       desc: 'Elegant and functional desks designed to elevate office productivity and bring sophistication to commercial and home workspaces.',
-      refImage: '/assets/images/ref_sofa_stool.png',
+      refImage: '/assets/images/ref_sofa_stool.webp',
       images: []
     },
-    { 
-      id: 'sofas', 
-      name: 'Sofas', 
+    {
+      id: 'sofas',
+      name: 'Sofas',
       folder: 'Sofas',
       count: 5,
       desc: 'Modular lounge sofas, chaise lounges, and custom poufs utilizing high-density commercial-grade foam and premium stain-resistant upholstery.',
-      refImage: '/journey-flagship.png',
+      refImage: '/journey-flagship.webp',
       images: []
     },
-    { 
-      id: 'tables', 
-      name: 'Tables', 
+    {
+      id: 'tables',
+      name: 'Tables',
       folder: 'Tables',
       count: 4,
       desc: 'Architectural statement tables featuring solid hardwood tops, metallic support structures, and commercial-grade sealants resistant to heavy wear.',
-      refImage: '/assets/images/hero_credenza.png',
+      refImage: '/assets/images/hero_credenza.webp',
       images: []
     },
-    { 
-      id: 'beds', 
-      name: 'Beds', 
+    {
+      id: 'beds',
+      name: 'Beds',
       folder: 'beds',
       count: 4,
       desc: 'Premium frames, headboards, and integrated bedroom furniture solutions built with high-end craftsmanship for premium lodging and comfort.',
-      refImage: '/journey-roots.png',
+      refImage: '/journey-roots.webp',
       images: []
     },
-    { 
-      id: 'cabinets', 
-      name: 'Cabinets', 
+    {
+      id: 'cabinets',
+      name: 'Cabinets',
       folder: 'cabinates',
       count: 6,
       desc: 'Premium custom casegoods, credenzas, modular wardrobes, and television dressers built with heavy-duty joinery and high-end finishes.',
-      refImage: '/assets/images/hero_casegoods.png',
+      refImage: '/assets/images/hero_casegoods.webp',
       images: []
     },
     {
@@ -177,7 +177,7 @@ export default function ProductsPage() {
       folder: 'Accessories',
       count: 4,
       desc: 'Beautifully crafted accents, details, and finishing accessories to complete the aesthetic of premium spaces.',
-      refImage: '/about-craft.png',
+      refImage: '/about-craft.webp',
       images: []
     }
   ].map(cat => {
@@ -201,7 +201,7 @@ export default function ProductsPage() {
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
-        
+
         {/* Page Hero Description Block */}
         <div className="flex flex-col gap-3 mb-16 max-w-[900px]">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-brand-charcoal leading-tight font-sans">
@@ -214,7 +214,7 @@ export default function ProductsPage() {
 
         {/* Catalog Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Index Selection Card */}
           <div className="lg:col-span-4 lg:sticky lg:top-28 bg-white border border-[#EBEBE9] rounded-[16px] p-6 sm:p-8 shadow-sm">
             <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-brand-plum/40 block mb-1">
@@ -235,11 +235,10 @@ export default function ProductsPage() {
                   >
                     <div className="flex items-center gap-2.5">
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-plum shrink-0" />}
-                      <span className={`transition-colors font-sans ${
-                        isActive 
-                          ? "font-bold text-brand-plum text-sm" 
+                      <span className={`transition-colors font-sans ${isActive
+                          ? "font-bold text-brand-plum text-sm"
                           : "text-gray-500 hover:text-brand-charcoal font-medium text-xs sm:text-sm"
-                      }`}>
+                        }`}>
                         {cat.name}
                       </span>
                     </div>
@@ -255,7 +254,7 @@ export default function ProductsPage() {
 
           {/* Right Column: Catalog Grid Showcase */}
           <div className="lg:col-span-8 space-y-8">
-            
+
             {/* Category Meta */}
             <div className="space-y-3">
               <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-brand-charcoal font-sans">
@@ -268,18 +267,18 @@ export default function ProductsPage() {
 
             {/* Products / Swatches Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4">
-              
+
               {/* Normal product items */}
               {activeCategory.images.map((prod, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="bg-white border border-[#EBEBE9] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
                 >
                   {/* Item Image Container - Aspect ratio locked to perfect square */}
                   <div className="w-full aspect-square overflow-hidden relative flex-shrink-0 bg-gray-50">
-                    <img 
-                      src={prod.path} 
-                      alt={prod.title} 
+                    <img
+                      src={prod.path}
+                      alt={prod.title}
                       className="w-full h-full object-cover transform group-hover:scale-102 transition-transform duration-700 ease-out"
                       loading="lazy"
                     />

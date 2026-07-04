@@ -16,48 +16,48 @@ interface Category {
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
   "Chairs": [
-    "img3.png",
-    "img6.png",
-    "img5.png",
-    "img4.png",
-    "img2.png",
-    "img1.png",
+    "img3.webp",
+    "img6.webp",
+    "img5.webp",
+    "img4.webp",
+    "img2.webp",
+    "img1.webp",
 
   ],
   "Desk": [
-    "img2.png",
-    "img4.png",
-    "img5.png",
-    "img3.png",
-    "img1.png",
+    "img2.webp",
+    "img4.webp",
+    "img5.webp",
+    "img3.webp",
+    "img1.webp",
   ],
   "Sofas": [
 
-    "img2.png",
-    "img3.png",
-    "img5.png",
-    "img6.png",
-    "img1.png",
+    "img2.webp",
+    "img3.webp",
+    "img5.webp",
+    "img6.webp",
+    "img1.webp",
   ],
   "Tables": [
-    "img1.png",
-    "img2.png",
-    "img3.png",
-    "img4.png"
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp"
   ],
   "beds": [
-    "img3.png",
-    "img4.png",
-    "img1.png",
-    "img2.png",
+    "img3.webp",
+    "img4.webp",
+    "img1.webp",
+    "img2.webp",
   ],
   "cabinates": [
-    "img6.png",
-    "img4.png",
-    "img5.png",
-    "img3.png",
-    "img1.png",
-    "img2.png",
+    "img6.webp",
+    "img4.webp",
+    "img5.webp",
+    "img3.webp",
+    "img1.webp",
+    "img2.webp",
   ]
 };
 

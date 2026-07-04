@@ -7,10 +7,10 @@ export default function HeroGrid() {
     <section className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6">
       {/* 2 Equal Columns Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-stretch">
-        
+
         {/* Left Column */}
         <div className="flex flex-col gap-4 sm:gap-6">
-          
+
           {/* Top Large Card (Full width hero-1.jpeg background) */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -20,7 +20,7 @@ export default function HeroGrid() {
           >
             {/* Full-width background image */}
             <img
-              src="/assets/images/hero-1.jpeg"
+              src="/assets/images/hero-images/hero-1.webp"
               alt="Akshar Foshan Hotel Furniture"
               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-102 transition-transform duration-1000 ease-out"
             />
@@ -51,7 +51,7 @@ export default function HeroGrid() {
 
           {/* Bottom Row of 2 Smaller Cards (Side-by-side on all screens) */}
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
-            
+
             {/* Card 1: Shelf */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -62,7 +62,7 @@ export default function HeroGrid() {
               {/* Full Bleed Image Layer */}
               <div className="absolute inset-0 w-full h-full">
                 <img
-                  src="/assets/images/ref_shelf.png"
+                  src="/assets/images/hero-images/ref_shelf.webp"
                   alt="Floating Wall Shelves"
                   className="w-full h-full object-cover transform group-hover:scale-103 transition-transform duration-750 ease-out"
                 />
@@ -79,7 +79,7 @@ export default function HeroGrid() {
               {/* Full Bleed Image Layer */}
               <div className="absolute inset-0 w-full h-full">
                 <img
-                  src="/assets/images/ref_sideboard.png"
+                  src="/assets/images/hero-images/ref_sideboard.webp"
                   alt="Suite Credenza Sideboards"
                   className="w-full h-full object-cover transform group-hover:scale-103 transition-transform duration-750 ease-out"
                 />
@@ -99,7 +99,7 @@ export default function HeroGrid() {
         >
           {/* Full Bleed Image */}
           <img
-            src="/assets/images/ref_sofa_stool.png"
+            src="/assets/images/hero-images/ref_sofa_stool.webp"
             alt="Sofa and Stool Decor"
             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-102 transition-transform duration-1000 ease-out"
           />
