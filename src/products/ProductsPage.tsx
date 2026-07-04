@@ -2,50 +2,53 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
-  "clubchairs": [
-    "palma.jpeg",
-    "julian.jpeg",
-    "amelie.jpeg",
-    "sinclair.jpeg",
-    "bruce.jpeg"
+  "Chairs": [
+    "img3.png",
+    "img6.png",
+    "img5.png",
+    "img4.png",
+    "img2.png",
+    "img1.png"
   ],
-  "cabinets": [
-    "dawson-bar-cabinate.jpeg",
-    "dawson-tv-dressor.jpeg",
-    "dawson-bookcase.jpeg",
-    "dawson-dressor.jpeg",
-    "vancouver-glass-cabinet.jpeg"
+  "Desk": [
+    "img2.png",
+    "img4.png",
+    "img5.png",
+    "img3.png",
+    "img1.png"
   ],
-  "dining-tables": [
-    "canmore.jpeg",
-    "everton.jpeg",
-    "Freeform.jpeg",
-    "Seattle.jpeg",
-    "Berlin.jpeg"
+  "Sofas": [
+    "img2.png",
+    "img3.png",
+    "img5.png",
+    "img6.png",
+    "img1.png"
   ],
-  "chair-and-benches": [
-    "paloma.jpeg",
-    "Sabine (E) Bench.jpeg",
-    "carprice-bulged.jpeg",
-    "otis.jpeg",
-    "paloma-with-arm.jpeg"
+  "Tables": [
+    "img1.png",
+    "img2.png",
+    "img3.png",
+    "img4.png"
   ],
-  "barstools": [
-    "caprice-barstool.jpeg",
-    "Cassius Barstool.jpeg",
-    "Dex_barstool.jpeg",
-    "evan.jpeg",
-    "sabina-barstool.jpeg",
-    "school-chair-with-arms.jpeg",
-    "school-chair.jpeg",
-    "steve.jpeg"
+  "beds": [
+    "img3.png",
+    "img4.png",
+    "img1.png",
+    "img2.png"
   ],
-  "sofas": [
-    "senaa-chaise-lounge.jpeg",
-    "senna-pouf.jpeg",
-    "Senna-sofa-240.jpeg",
-    "Senna-Sofa-285.jpeg",
-    "victor-elements.jpeg"
+  "cabinates": [
+    "img6.png",
+    "img4.png",
+    "img5.png",
+    "img3.png",
+    "img1.png",
+    "img2.png"
+  ],
+  "Accessories": [
+    "img1.png",
+    "img2.png",
+    "img3.png",
+    "img4.png"
   ]
 };
 
@@ -104,17 +107,8 @@ interface Category {
   images: ProductImage[];
 }
 
-const formatTitle = (filename: string): string => {
-  const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
-  const withSpaces = nameWithoutExt.replace(/[-_]/g, ' ');
-  return withSpaces
-    .split(' ')
-    .map(word => word ? word.charAt(0).toUpperCase() + word.slice(1) : '')
-    .join(' ');
-};
-
 export default function ProductsPage() {
-  const [activeCategoryId, setActiveCategoryId] = useState('clubchairs');
+  const [activeCategoryId, setActiveCategoryId] = useState('chairs');
 
   // Scroll to top on page load
   useEffect(() => {
@@ -124,72 +118,81 @@ export default function ProductsPage() {
   // Assemble dynamic categories matching index layout list
   const categoriesList: Category[] = [
     { 
-      id: 'clubchairs', 
-      name: 'Club Chairs', 
-      folder: 'clubchairs',
-      count: 5,
-      desc: 'Luxurious, deep-seated lounge chairs offering exceptional comfort and refined styling for hotel lobbies, guest rooms, and executive suites.',
+      id: 'chairs', 
+      name: 'Chairs', 
+      folder: 'Chairs',
+      count: 6,
+      desc: 'Sleek, ergonomically designed seating options that provide optimal support and sophisticated styling for dining and lounge environments.',
       refImage: '/about-hero.png',
       images: []
     },
     { 
-      id: 'barstools', 
-      name: 'Barstools', 
-      folder: 'barstools',
-      count: 8,
-      desc: 'High-occupancy durability bar seating with precision-engineered footrests and ergonomic back angles, perfect for hotel bars and restaurant counters.',
+      id: 'desks', 
+      name: 'Desks', 
+      folder: 'Desk',
+      count: 5,
+      desc: 'Elegant and functional desks designed to elevate office productivity and bring sophistication to commercial and home workspaces.',
       refImage: '/assets/images/ref_sofa_stool.png',
-      images: []
-    },
-    { 
-      id: 'cabinets', 
-      name: 'Cabinets', 
-      folder: 'cabinets',
-      count: 5,
-      desc: 'Premium custom casegoods, credenzas, modular wardrobes, and television dressers built with heavy-duty joinery and high-end veneer finishes.',
-      refImage: '/assets/images/hero_casegoods.png',
-      images: []
-    },
-    { 
-      id: 'dining-tables', 
-      name: 'Dining Tables', 
-      folder: 'dining-tables',
-      count: 5,
-      desc: 'Architectural statement tables featuring solid hardwood tops, metallic support structures, and commercial-grade sealants resistant to heavy wear.',
-      refImage: '/assets/images/hero_credenza.png',
-      images: []
-    },
-    { 
-      id: 'chair-and-benches', 
-      name: 'Chairs & Benches', 
-      folder: 'chair-and-benches',
-      count: 5,
-      desc: 'Sleek, ergonomically designed seating options that provide optimal support and sophisticated styling for dining and lounge environments.',
-      refImage: '/journey-roots.png',
       images: []
     },
     { 
       id: 'sofas', 
       name: 'Sofas', 
-      folder: 'sofas',
+      folder: 'Sofas',
       count: 5,
       desc: 'Modular lounge sofas, chaise lounges, and custom poufs utilizing high-density commercial-grade foam and premium stain-resistant upholstery.',
       refImage: '/journey-flagship.png',
+      images: []
+    },
+    { 
+      id: 'tables', 
+      name: 'Tables', 
+      folder: 'Tables',
+      count: 4,
+      desc: 'Architectural statement tables featuring solid hardwood tops, metallic support structures, and commercial-grade sealants resistant to heavy wear.',
+      refImage: '/assets/images/hero_credenza.png',
+      images: []
+    },
+    { 
+      id: 'beds', 
+      name: 'Beds', 
+      folder: 'beds',
+      count: 4,
+      desc: 'Premium frames, headboards, and integrated bedroom furniture solutions built with high-end craftsmanship for premium lodging and comfort.',
+      refImage: '/journey-roots.png',
+      images: []
+    },
+    { 
+      id: 'cabinets', 
+      name: 'Cabinets', 
+      folder: 'cabinates',
+      count: 6,
+      desc: 'Premium custom casegoods, credenzas, modular wardrobes, and television dressers built with heavy-duty joinery and high-end finishes.',
+      refImage: '/assets/images/hero_casegoods.png',
+      images: []
+    },
+    {
+      id: 'accessories',
+      name: 'Accessories',
+      folder: 'Accessories',
+      count: 4,
+      desc: 'Beautifully crafted accents, details, and finishing accessories to complete the aesthetic of premium spaces.',
+      refImage: '/about-craft.png',
       images: []
     }
   ].map(cat => {
     const files = LOOKBOOK_DATA[cat.folder] || [];
     const images = files.map((file) => {
-      const title = formatTitle(file);
       return {
-        path: `/assets/lookbook/${cat.folder}/${file}`,
-        title,
-        specs: PRODUCT_SPECS[title] || "Custom Dimensions on Request"
+        path: `/assets/new-lookbook/${cat.folder}/${file}`,
+        title: '',
+        specs: "Custom Dimensions on Request"
       };
     });
     return {
       ...cat,
-      images
+      images,
+      count: files.length
     };
   });
 
@@ -286,11 +289,13 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Metadata details - Clean banner directly underneath, no white space gaps */}
-                  <div className="py-3 text-center bg-white border-t border-[#EBEBE9]">
-                    <h4 className="font-bold text-xs sm:text-sm text-brand-charcoal truncate font-sans group-hover:text-brand-plum transition-colors uppercase tracking-widest">
-                      {prod.title}
-                    </h4>
-                  </div>
+                  {prod.title && (
+                    <div className="py-3 text-center bg-white border-t border-[#EBEBE9]">
+                      <h4 className="font-bold text-xs sm:text-sm text-brand-charcoal truncate font-sans group-hover:text-brand-plum transition-colors uppercase tracking-widest">
+                        {prod.title}
+                      </h4>
+                    </div>
+                  )}
                 </div>
               ))}
 

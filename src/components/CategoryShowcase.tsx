@@ -15,79 +15,68 @@ interface Category {
 }
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
-  "clubchairs": [
-    "palma.jpeg",
-    "julian.jpeg",
-    "amelie.jpeg",
-    "sinclair.jpeg",
-    "bruce.jpeg"
-  ],
-  "cabinets": [
-    "dawson-bar-cabinate.jpeg",
-    "dawson-tv-dressor.jpeg",
-    "dawson-bookcase.jpeg",
-    "dawson-dressor.jpeg",
-    "vancouver-glass-cabinet.jpeg"
-  ],
-  "dining-tables": [
-    "canmore.jpeg",
-    "everton.jpeg",
-    "Freeform.jpeg",
-    "Seattle.jpeg",
-    "Berlin.jpeg"
-  ],
-  "chair-and-benches": [
-    "paloma.jpeg",
-    "Sabine (E) Bench.jpeg",
-    "carprice-bulged.jpeg",
-    "otis.jpeg",
-    "paloma-with-arm.jpeg"
-  ],
-  "barstools": [
-    "caprice-barstool.jpeg",
-    "Cassius Barstool.jpeg",
-    "Dex_barstool.jpeg",
-    "evan.jpeg",
-    "sabina-barstool.jpeg",
-    "school-chair-with-arms.jpeg",
-    "school-chair.jpeg",
-    "steve.jpeg"
-  ],
-  "sofas": [
-    "senaa-chaise-lounge.jpeg",
-    "senna-pouf.jpeg",
-    "Senna-sofa-240.jpeg",
-    "Senna-Sofa-285.jpeg",
-    "victor-elements.jpeg"
-  ]
-};
+  "Chairs": [
+    "img3.png",
+    "img6.png",
+    "img5.png",
+    "img4.png",
+    "img2.png",
+    "img1.png",
 
-// Helper function to format filename into a nice readable title
-const formatTitle = (filename: string): string => {
-  const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
-  const withSpaces = nameWithoutExt.replace(/[-_]/g, ' ');
-  return withSpaces
-    .split(' ')
-    .map(word => word ? word.charAt(0).toUpperCase() + word.slice(1) : '')
-    .join(' ');
+  ],
+  "Desk": [
+    "img2.png",
+    "img4.png",
+    "img5.png",
+    "img3.png",
+    "img1.png",
+  ],
+  "Sofas": [
+
+    "img2.png",
+    "img3.png",
+    "img5.png",
+    "img6.png",
+    "img1.png",
+  ],
+  "Tables": [
+    "img1.png",
+    "img2.png",
+    "img3.png",
+    "img4.png"
+  ],
+  "beds": [
+    "img3.png",
+    "img4.png",
+    "img1.png",
+    "img2.png",
+  ],
+  "cabinates": [
+    "img6.png",
+    "img4.png",
+    "img5.png",
+    "img3.png",
+    "img1.png",
+    "img2.png",
+  ]
 };
 
 // Generate list of categories based on directory contents
 const CATEGORIES: Category[] = [
-  { id: 'clubchairs', name: 'Club Chairs', folder: 'clubchairs' },
-  { id: 'barstools', name: 'Barstools', folder: 'barstools' },
-  { id: 'cabinets', name: 'Cabinets', folder: 'cabinets' },
-  { id: 'dining-tables', name: 'Dining Tables', folder: 'dining-tables' },
-  { id: 'chair-and-benches', name: 'Chairs & Benches', folder: 'chair-and-benches' },
-  { id: 'sofas', name: 'Sofas', folder: 'sofas' },
+  { id: 'chairs', name: 'Chairs', folder: 'Chairs' },
+  { id: 'desks', name: 'Desks', folder: 'Desk' },
+  { id: 'sofas', name: 'Sofas', folder: 'Sofas' },
+  { id: 'tables', name: 'Tables', folder: 'Tables' },
+  { id: 'beds', name: 'Beds', folder: 'beds' },
+  { id: 'cabinets', name: 'Cabinets', folder: 'cabinates' },
 ].map(cat => {
   const files = LOOKBOOK_DATA[cat.folder] || [];
   const sortedFiles = files;
-  
+
   const images = sortedFiles.map((file) => {
     return {
-      path: `/assets/lookbook/${cat.folder}/${file}`,
-      title: formatTitle(file)
+      path: `/assets/new-lookbook/${cat.folder}/${file}`,
+      title: ''
     };
   });
 
@@ -120,7 +109,7 @@ const cardVariants: Variants = {
 };
 
 export default function CategoryShowcase() {
-  const [activeCategoryId, setActiveCategoryId] = useState('clubchairs');
+  const [activeCategoryId, setActiveCategoryId] = useState('chairs');
   const [lightboxData, setLightboxData] = useState<{
     isOpen: boolean;
     subcategoryName: string;
@@ -178,13 +167,13 @@ export default function CategoryShowcase() {
 
   return (
     <section id="products" className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-24">
-      
+
       {/* Header Area */}
       <div className="flex items-center justify-between mb-10 sm:mb-12">
         <h2 className="text-xl sm:text-2xl font-black text-brand-charcoal tracking-tight font-sans uppercase">
           Product Categories
         </h2>
-        
+
         {/* Navigation Arrows */}
         <div className="flex items-center gap-3">
           <button
@@ -205,7 +194,7 @@ export default function CategoryShowcase() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 items-start">
-        
+
         {/* Left: Category Stack (Pills) */}
         <div className="w-full lg:w-64 shrink-0 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar gap-2 lg:gap-0 lg:justify-between lg:h-[320px] pb-4 lg:pb-0">
           {CATEGORIES.map(category => {
@@ -214,11 +203,10 @@ export default function CategoryShowcase() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategoryId(category.id)}
-                className={`flex items-center justify-between px-5 py-3.5 lg:py-2.5 rounded-full lg:rounded-xl font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shrink-0 cursor-pointer text-left w-auto lg:w-full ${
-                  isActive
-                    ? 'bg-brand-plum text-white shadow-sm shadow-brand-plum/20'
-                    : 'bg-[#F5F5F3] hover:bg-[#EBEBE9] text-[#2B2521]'
-                }`}
+                className={`flex items-center justify-between px-5 py-3.5 lg:py-2.5 rounded-full lg:rounded-xl font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shrink-0 cursor-pointer text-left w-auto lg:w-full ${isActive
+                  ? 'bg-brand-plum text-white shadow-sm shadow-brand-plum/20'
+                  : 'bg-[#F5F5F3] hover:bg-[#EBEBE9] text-[#2B2521]'
+                  }`}
               >
                 <span className="truncate mr-4">{category.name}</span>
                 <ChevronRight className={`w-4 h-4 shrink-0 hidden lg:block transition-transform duration-300 ${isActive ? 'translate-x-0.5' : 'text-gray-400'}`} />
@@ -306,7 +294,7 @@ export default function CategoryShowcase() {
 
             {/* Main Stage Image Area */}
             <div className="relative w-full flex-grow flex items-center justify-center my-6 px-4 sm:px-16 md:px-28">
-              
+
               {/* Left Stage Arrow */}
               <button
                 onClick={prevImage}
@@ -343,7 +331,7 @@ export default function CategoryShowcase() {
 
             {/* Bottom Navigation Track */}
             <div className="w-full max-w-4xl z-10" onClick={(e) => e.stopPropagation()}>
-              
+
               {/* Page Indicator */}
               <div className="text-center text-xs text-white/50 font-medium mb-4">
                 {lightboxData.currentIndex + 1} of {lightboxData.images.length}
@@ -357,11 +345,10 @@ export default function CategoryShowcase() {
                     <button
                       key={index}
                       onClick={() => setLightboxData(prev => ({ ...prev, currentIndex: index }))}
-                      className={`relative flex-none w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden transition-all duration-200 cursor-pointer border-2 ${
-                        isActive
-                          ? 'border-purple-400 scale-105 shadow-md shadow-purple-400/20'
-                          : 'border-white/10 hover:border-white/35 opacity-60 hover:opacity-100'
-                      }`}
+                      className={`relative flex-none w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden transition-all duration-200 cursor-pointer border-2 ${isActive
+                        ? 'border-purple-400 scale-105 shadow-md shadow-purple-400/20'
+                        : 'border-white/10 hover:border-white/35 opacity-60 hover:opacity-100'
+                        }`}
                     >
                       <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
                     </button>
