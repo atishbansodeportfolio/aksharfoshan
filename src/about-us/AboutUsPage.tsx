@@ -468,7 +468,7 @@ export default function AboutUsPage() {
                   <div>
                     <span className="text-[8px] font-extrabold uppercase tracking-widest text-brand-charcoal/40 block">Professional Network</span>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/yogin-patel-3a1841111" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-xs font-bold text-brand-charcoal hover:text-brand-plum transition-colors inline-flex items-center gap-1"
