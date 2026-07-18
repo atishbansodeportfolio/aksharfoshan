@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Award, ArrowLeft, ArrowRight } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
+import SEO from '../components/SEO';
 
 export default function ProjectsPage() {
   // Scroll to top on page load
@@ -11,6 +12,10 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen py-16 sm:py-24">
+      <SEO 
+        title="Hotel Installations Portfolio" 
+        description="Browse Akshar Foshan's successful hotel installation case studies across major brands like Choice Hotels, Best Western, Hilton, and Wyndham." 
+      />
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         
         {/* Back Link */}

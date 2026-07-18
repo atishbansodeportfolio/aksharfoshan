@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, X, Eye, MapPin, Award, Sliders, Info, Image as ImageIcon } from 'lucide-react';
 import { projectsData, getProjectImages } from '../data/projectsData';
+import SEO from '../components/SEO';
 
 export default function ProjectDetailsPage() {
   const { projectId } = useParams<{ projectId: string }>();
@@ -63,6 +64,11 @@ export default function ProjectDetailsPage() {
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen py-16 sm:py-24 relative">
+      <SEO 
+        title={`${project.name} | Hotel Installation`} 
+        description={`Case study of Akshar Foshan's custom casegoods, upholstery, and millwork installation for ${project.name} in ${project.location}.`} 
+        ogImage={project.mainImage}
+      />
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         
         {/* Navigation Breadcrumb */}

@@ -30,9 +30,9 @@ export default function HeroGrid() {
               <span className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2 sm:mb-4">
                 Hospitality FF&E Solutions
               </span>
-              <h2 className="text-lg sm:text-2xl lg:text-3xl font-black text-brand-charcoal tracking-tight leading-[1.1] font-sans">
+              <h1 className="text-lg sm:text-2xl lg:text-3xl font-black text-brand-charcoal tracking-tight leading-[1.1] font-sans">
                 Hotel furniture <br /> made simple
-              </h2>
+              </h1>
             </div>
 
             {/* Bottom Left: Read more / arrow button */}

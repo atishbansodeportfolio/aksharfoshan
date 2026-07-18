@@ -15,6 +15,7 @@ import ProjectsPage from './projects/ProjectsPage';
 import ProjectDetailsPage from './projects/ProjectDetailsPage';
 import AboutUsPage from './about-us/AboutUsPage';
 import ProductsPage from './products/ProductsPage';
+import SEO from './components/SEO';
 import { ArrowUp } from 'lucide-react';
 
 function ScrollToHashElement() {
@@ -72,6 +73,10 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
+                <SEO 
+                  title="" 
+                  description="Akshar Foshan is a leading global manufacturer and FF&E supplier of high-end bespoke custom hotel furniture, casegoods, seating, and millwork for premium hospitality brands." 
+                />
                 {/* Featured Products Grid */}
                 <div id="collections" className="pt-6 pb-4">
                   <HeroGrid />

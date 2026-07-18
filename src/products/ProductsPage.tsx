@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const LOOKBOOK_DATA: Record<string, string[]> = {
   "Chairs": [
@@ -200,6 +201,10 @@ export default function ProductsPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Premium Casegoods & Collections" 
+        description="Explore Akshar Foshan's curated collection of premium chairs, desks, sofas, tables, beds, and modular cabinets engineered for high-occupancy commercial use." 
+      />
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
 
         {/* Page Hero Description Block */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { CheckCircle2, Factory, Globe2, ShieldCheck, HeartHandshake, Mail } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const LinkedinIcon = () => (
   <svg 
@@ -88,6 +89,10 @@ export default function AboutUsPage() {
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen pb-24">
+      <SEO 
+        title="About Us" 
+        description="Learn about Akshar Foshan's decade-long journey from an artisanal carpentry workshop in Foshan to a global exporter of BIFMA-compliant hospitality furniture." 
+      />
       {/* Hero Section */}
       <div className="relative h-[85vh] min-h-[550px] w-full overflow-hidden bg-brand-charcoal flex flex-col justify-between">
         {/* Background Video */}
@@ -109,14 +114,14 @@ export default function AboutUsPage() {
 
         {/* Center Outlined Text */}
         <div className="flex-grow flex items-center justify-center z-10 relative px-4">
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut' }}
             className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-[0.15em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)] text-center select-none font-sans"
           >
             AKSHAR FOSHAN
-          </motion.h2>
+          </motion.h1>
         </div>
 
         {/* Bottom Section with Separator Line */}
