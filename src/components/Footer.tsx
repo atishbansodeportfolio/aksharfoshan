@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -149,8 +150,7 @@ export default function Footer() {
                     <span className="text-xs text-emerald-600 font-bold tracking-tight animate-fadeIn">
                       ✓ Inquiry submitted successfully! Our team will contact you shortly.
                     </span>
-                  )}
-                </div>
+                  )}<p className="text-[11px] text-brand-charcoal/60 leading-normal font-light pt-2">Inquiries received by Akshar Hotel Furniture &amp; Divine Procurement LLC. By submitting, you agree to our <Link to="/terms-and-conditions" className="underline hover:text-brand-plum transition-colors font-medium">Terms</Link> and acknowledge our <Link to="/privacy-policy" className="underline hover:text-brand-plum transition-colors font-medium">Privacy Policy</Link>.</p></div>
               </form>
             </div>
 
@@ -219,8 +219,8 @@ export default function Footer() {
             © 2026 Akshar (Foshan) Hotel Furniture Co., Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-[10px] text-gray-400">
-            <span className="hover:text-brand-plum transition-colors cursor-pointer font-medium">Privacy Policy</span>
-            <span className="hover:text-brand-plum transition-colors cursor-pointer font-medium">Terms of Service</span>
+            <Link to="/privacy-policy" className="hover:text-brand-plum transition-colors font-medium">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-brand-plum transition-colors font-medium">Terms of Service</Link>
           </div>
         </div>
 
@@ -228,3 +228,7 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
+

@@ -16,6 +16,8 @@ import ProjectDetailsPage from './projects/ProjectDetailsPage';
 import AboutUsPage from './about-us/AboutUsPage';
 import ProductsPage from './products/ProductsPage';
 import SEO from './components/SEO';
+import PrivacyPolicyPage from './legal/PrivacyPolicyPage';
+import TermsAndConditionsPage from './legal/TermsAndConditionsPage';
 import { ArrowUp } from 'lucide-react';
 
 function ScrollToHashElement() {
@@ -112,6 +114,11 @@ function App() {
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+            <Route path="/terms" element={<TermsAndConditionsPage />} />
+            <Route path="/terms-of-service" element={<TermsAndConditionsPage />} />
           </Routes>
         </main>
 
@@ -133,3 +140,5 @@ function App() {
 }
 
 export default App;
+
+
