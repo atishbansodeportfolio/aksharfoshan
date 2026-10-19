@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import HeroGrid from './components/HeroGrid';
 import Features from './components/Features';
-import BrandStrip from './components/BrandStrip';
 import CategoryShowcase from './components/CategoryShowcase';
 import OurProjects from './components/OurProjects';
 import Stats from './components/Stats';
@@ -89,9 +88,6 @@ function App() {
 
                 {/* Product Categories Showcase */}
                 <CategoryShowcase />
-
-                {/* Brand Logos Strip */}
-                <BrandStrip />
 
                 {/* Selected Hotel Projects Showcase */}
                 <OurProjects />
